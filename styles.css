@@ -1,115 +1,166 @@
 /* Estilos generales */
 body {
-    font-family: 'Arial', sans-serif;
+    font-family: 'Poppins', sans-serif;
     margin: 0;
     padding: 0;
     background: linear-gradient(135deg, #1e3c72, #2a5298); /* Fondo con gradiente azul */
     color: #fff;
     line-height: 1.6;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
 }
 
 /* Encabezado */
 header {
     background-color: rgba(0, 0, 0, 0.7); /* Fondo oscuro semi-transparente */
     color: #fff;
-    padding: 40px 20px;
+    padding: 60px 20px;
     text-align: center;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
 }
 
 header h1 {
     margin: 0;
-    font-size: 3rem;
-    font-weight: bold;
+    font-size: 3.5rem;
+    font-weight: 700;
     text-transform: uppercase;
+    letter-spacing: 2px;
 }
 
 header p {
     margin: 10px 0 0;
-    font-size: 1.2rem;
+    font-size: 1.3rem;
     color: #f4f4f4;
+    font-weight: 300;
 }
 
 /* Contenedor principal */
 .container {
-    padding: 20px;
+    padding: 40px 20px;
     max-width: 1200px;
-    margin: 20px auto;
+    margin: 0 auto;
     text-align: center;
+    flex: 1;
 }
 
 .container h2 {
-    font-size: 2rem;
-    margin-bottom: 20px;
+    font-size: 2.5rem;
+    margin-bottom: 40px;
     color: #fff;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
 }
 
-/* Catálogo XD*/
+/* Catálogo */
 .catalogo {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    gap: 20px;
+    gap: 30px;
 }
 
 .catalogo-item {
-    background-color: rgba(255, 255, 255, 0.9); /* Fondo semi-transparente */
-    border: 1px solid #ddd;
-    border-radius: 15px;
-    padding: 20px;
-    width: 300px;
+    background-color: rgba(255, 255, 255, 0.95); /* Fondo semi-transparente */
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 20px;
+    padding: 25px;
+    width: 320px;
     text-align: center;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     cursor: pointer;
+    overflow: hidden;
 }
 
 .catalogo-item:hover {
     transform: translateY(-10px);
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 12px 25px rgba(0, 0, 0, 0.3);
 }
 
 .catalogo-item img {
     max-width: 100%;
-    border-radius: 10px;
-    transition: transform 0.3s ease;
+    border-radius: 15px;
+    transition: transform 0.3s ease, filter 0.3s ease;
 }
 
 .catalogo-item:hover img {
-    transform: scale(1.05);
+    transform: scale(1.1);
+    filter: brightness(1.1);
 }
 
 .catalogo-item h3 {
-    font-size: 1.5rem;
-    margin: 15px 0 10px;
+    font-size: 1.6rem;
+    margin: 20px 0 10px;
     color: #1e3c72; /* Azul oscuro */
+    font-weight: 600;
 }
 
 .catalogo-item p {
     font-size: 1rem;
-    color: #333;
+    color: #555;
+    line-height: 1.5;
+    margin: 0;
 }
 
 /* Pie de página */
 footer {
-    background-color: rgba(0, 0, 0, 0.7); /* Fondo oscuro semi-transparente */
+    background-color: rgba(0, 0, 0, 0.8); /* Fondo oscuro semi-transparente */
     color: #fff;
     text-align: center;
-    padding: 20px;
-    margin-top: 20px;
-    box-shadow: 0 -4px 10px rgba(0, 0, 0, 0.2);
+    padding: 30px 20px;
+    margin-top: 60px;
+    box-shadow: 0 -4px 15px rgba(0, 0, 0, 0.3);
 }
 
 footer p {
     margin: 5px 0;
     font-size: 1rem;
+    font-weight: 300;
+}
+footer i{
+    margin-right: 10px;
+    color: #D14836;
+}
+
+#whatsapp{
+    margin-right: 10px;
+    color: #25D366;
+}
+
+#telegram{
+    margin-right: 10px;
+    color: #0088cc;
 }
 
 footer a {
     color: #4CAF50; /* Verde vibrante */
     text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s ease;
 }
 
 footer a:hover {
+    color: #45a049; /* Verde más oscuro */
     text-decoration: underline;
 }
+
+/* Animaciones */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.catalogo-item {
+    animation: fadeIn 0.6s ease-out;
+}
+
+/* Fuentes */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');

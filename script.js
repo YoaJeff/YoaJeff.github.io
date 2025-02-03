@@ -3,7 +3,7 @@ const paginas = [
     {
         titulo: "EL RINCÓN QUE USTED NO CONOCE",
         imagen: "el-rincon-que-usted-no-conoce/portada.jpg",
-        descripcion: "Página web de la tienda física de ropa situada en 'Independencia #115-b / Juan Bruno Zayas y Alemán. Santa Clara",
+        descripcion: "Página web de la tienda física de ropa situada en 'Independencia #115-b / Juan Bruno Zayas y Alemán. Santa Clara'",
         enlace: "el-rincon-que-usted-no-conoce/index.html"
     },
     // Agrega más páginas aquí
