@@ -6,12 +6,6 @@ const paginas = [
         descripcion: "Página web de la tienda física de ropa situada en 'Independencia #115-b / Juan Bruno Zayas y Alemán. Santa Clara",
         enlace: "el-rincon-que-usted-no-conoce/index.html"
     },
-    {
-        titulo: "Página Web 2",
-        imagen: "ruta/a/imagen2.jpg",
-        descripcion: "Descripción de la página web 2.",
-        enlace: "ruta/a/pagina2.html"
-    },
     // Agrega más páginas aquí
     /*
     {
