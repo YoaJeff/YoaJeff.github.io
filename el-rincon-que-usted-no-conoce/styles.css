@@ -110,9 +110,28 @@ footer h3 {
     margin: 0 0 10px;
     font-size: 1.2rem;
 }
-
+footer a:hover {
+    color: #45a049; /* Verde más oscuro */
+    text-decoration: underline;
+}
+footer a {
+    color: #4CAF50; /* Verde vibrante */
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
 footer p {
     margin: 5px 0;
     font-size: 1rem;
     color: #fdfdfd;
+}
+
+.ubicacion i {
+    margin-right: 10px;
+    color: #ff0000; /* Color del icono de ubicación */
+}
+
+.Whatsapp i{
+    margin-right: 10px;
+    color: #25D366;
 }
