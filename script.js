@@ -1,14 +1,17 @@
-document.getElementById('contactForm').addEventListener('submit', function (e) {
-    e.preventDefault(); // Evita que el formulario se envíe
+document.getElementById('solicitudForm').addEventListener('submit', function(event) {
+    event.preventDefault();
 
-    // Simula el envío del formulario
-    const nombre = document.getElementById('nombre').value;
-    const email = document.getElementById('email').value;
-    const mensaje = document.getElementById('mensaje').value;
+    const fecha = document.getElementById('fecha').value;
+    const horarioInicio = document.getElementById('horarioInicio').value;
+    const horarioFin = document.getElementById('horarioFin').value;
+    const pago = document.getElementById('pago').value;
+    const descripcion = document.getElementById('descripcion').value;
 
-    // Muestra un mensaje de confirmación
-    document.getElementById('mensajeConfirmacion').textContent = `Gracias, ${nombre}. Tu mensaje ha sido enviado.`;
+    // Aquí puedes agregar la lógica para enviar los datos a un servidor o realizar otras acciones
+    console.log('Fecha:', fecha);
+    console.log('Horario:', horarioInicio + ' - ' + horarioFin);
+    console.log('Pago:', pago);
+    console.log('Descripción:', descripcion);
 
-    // Limpia el formulario
-    document.getElementById('contactForm').reset();
+    alert('Solicitud enviada con éxito');
 });
