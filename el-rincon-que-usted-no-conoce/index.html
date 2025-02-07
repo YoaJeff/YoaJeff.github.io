@@ -12,6 +12,10 @@
     <header>
         <h1>El rincón que usted no conoce</h1>
         <p>Tu tienda de ropa favorita con los mejores precios y estilos.</p>
+        <a href="agregar.html" class="btn-agregar">Agregar Producto</a>
+        <button id="btn-carrito" class="btn-carrito">
+            <i class="fas fa-shopping-cart"></i> Carrito
+        </button>
     </header>
 
     <!-- Sección de Productos -->
@@ -20,6 +24,16 @@
             <!-- Los productos se generarán dinámicamente con JavaScript -->
         </section>
     </main>
+
+    <!-- Carrito de Compras (oculto por defecto) -->
+    <aside class="carrito" id="carrito">
+        <h2>Carrito de Compras</h2>
+        <ul id="lista-carrito">
+            <!-- Los productos del carrito se generarán dinámicamente con JavaScript -->
+        </ul>
+        <p>Total: <span id="total-carrito">$0.00</span></p>
+        <button id="vaciar-carrito">Vaciar Carrito</button>
+    </aside>
 
     <!-- Pie de Página -->
     <footer>

@@ -32,6 +32,62 @@ header p {
     color: #f4f4f4;
 }
 
+/* Botones */
+.btn-agregar, .btn-volver, .btn-carrito {
+    background-color: #4CAF50;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    text-decoration: none;
+    font-size: 1rem;
+    transition: background-color 0.3s ease;
+    margin: 5px;
+}
+
+.btn-agregar:hover, .btn-volver:hover, .btn-carrito:hover {
+    background-color: #45a049;
+}
+
+/* Formulario */
+.formulario {
+    max-width: 500px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.formulario label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: bold;
+}
+
+.formulario input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1rem;
+}
+
+.formulario button {
+    background-color: #4CAF50;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background-color 0.3s ease;
+}
+
+.formulario button:hover {
+    background-color: #45a049;
+}
 /* Sección de Productos */
 .productos {
     display: flex;
@@ -96,6 +152,110 @@ header p {
     transform: scale(1.05);
 }
 
+/* Carrito de Compras */
+.carrito {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    padding: 20px;
+    width: 300px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    display: none; /* Oculto por defecto */
+}
+
+.carrito.visible {
+    display: block; /* Mostrar cuando tenga la clase "visible" */
+}
+
+.carrito h2 {
+    margin: 0 0 15px;
+    font-size: 1.5rem;
+}
+
+.carrito ul {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 15px;
+}
+
+.carrito ul li {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+}
+
+.carrito ul li span {
+    font-weight: bold;
+}
+
+.carrito p {
+    margin: 0;
+    font-size: 1.2rem;
+}
+
+.carrito button {
+    background-color: #e91e63;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background-color 0.3s ease;
+}
+
+.carrito button:hover {
+    background-color: #c2185b;
+}
+
+/* Lista de productos en la página de agregar/editar */
+.lista-productos {
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.lista-productos h2 {
+    margin: 0 0 15px;
+    font-size: 1.5rem;
+}
+
+.lista-productos ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.lista-productos ul li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+.lista-productos ul li button {
+    background-color: #333;
+    color: #fff;
+    padding: 5px 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 0.9rem;
+    transition: background-color 0.3s ease;
+}
+
+.lista-productos ul li button:hover {
+    background-color: #555;
+}
 /* Pie de Página */
 footer {
     background-color: rgba(0, 0, 0, 0.9); /* Fondo oscuro semi-transparente */
@@ -134,4 +294,49 @@ footer p {
 .Whatsapp i{
     margin-right: 10px;
     color: #25D366;
+}
+/* Estilos para el formulario de autenticación */
+.auth-form {
+    max-width: 300px;
+    margin: 100px auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.auth-form h2 {
+    margin: 0 0 15px;
+    font-size: 1.5rem;
+}
+
+.auth-form input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1rem;
+}
+
+.auth-form button {
+    background-color: #4CAF50;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background-color 0.3s ease;
+}
+
+.auth-form button:hover {
+    background-color: #45a049;
+}
+
+.mensaje-error {
+    color: #e91e63;
+    font-size: 0.9rem;
+    margin-top: 10px;
 }
