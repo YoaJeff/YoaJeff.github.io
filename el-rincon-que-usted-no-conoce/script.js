@@ -1,4 +1,4 @@
-// Array de productos estáticos
+// Array de productos estáticos 
 const productos = [
     {
         nombre: "Camiseta Negra",
