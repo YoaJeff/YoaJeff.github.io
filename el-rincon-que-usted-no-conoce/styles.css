@@ -1,5 +1,4 @@
 /* Estilos generales */
-
 body {
     font-family: 'Arial', sans-serif;
     margin: 0;
@@ -21,15 +20,12 @@ header {
 
 header h1 {
     margin: 0;
-    font-size: 3rem;
-    font-weight: bold;
-    text-transform: uppercase;
+    font-size: 2.5rem;
 }
 
 header p {
     margin: 10px 0 0;
     font-size: 1.2rem;
-    color: #f4f4f4;
 }
 
 /* Botones */
@@ -88,6 +84,7 @@ header p {
 .formulario button:hover {
     background-color: #45a049;
 }
+
 /* Sección de Productos */
 .productos {
     display: flex;
@@ -97,59 +94,37 @@ header p {
 }
 
 .producto {
-    background-color: rgba(255, 255, 255, 0.9); /* Fondo semi-transparente */
+    background-color: #fff;
     border: 1px solid #ddd;
-    border-radius: 15px;
+    border-radius: 10px;
     margin: 15px;
     padding: 20px;
     width: 250px;
     text-align: center;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .producto:hover {
     transform: translateY(-10px);
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
 }
 
 .producto img {
     max-width: 100%;
     border-radius: 10px;
-    transition: transform 0.3s ease;
-}
-
-.producto:hover img {
-    transform: scale(1.05);
 }
 
 .producto h2 {
     font-size: 1.5rem;
     margin: 15px 0 10px;
-    color: #333;
 }
 
 .producto .precio {
     font-size: 1.2rem;
-    color: #e91e63; /* Color rosa vibrante */
+    color: #4CAF50;
     font-weight: bold;
     margin: 10px 0;
-}
-
-.producto button {
-    background-color: #e91e63; /* Color rosa vibrante */
-    color: #fff;
-    padding: 10px 20px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    font-size: 1rem;
-    transition: background-color 0.3s ease, transform 0.3s ease;
-}
-
-.producto button:hover {
-    background-color: #c2185b; /* Rosa más oscuro */
-    transform: scale(1.05);
 }
 
 /* Carrito de Compras */
@@ -256,6 +231,7 @@ header p {
 .lista-productos ul li button:hover {
     background-color: #555;
 }
+
 /* Pie de Página */
 footer {
     background-color: rgba(0, 0, 0, 0.9); /* Fondo oscuro semi-transparente */
@@ -266,25 +242,18 @@ footer {
     box-shadow: 0 -4px 10px rgba(0, 0, 0, 0.2);
 }
 
-footer h3 {
-    margin: 0 0 10px;
-    font-size: 1.2rem;
+footer p {
+    margin: 5px 0;
+    font-size: 1rem;
 }
-footer a:hover {
-    color: #45a049; /* Verde más oscuro */
-    text-decoration: underline;
-}
+
 footer a {
     color: #4CAF50; /* Verde vibrante */
     text-decoration: none;
     font-weight: 500;
     transition: color 0.3s ease;
 }
-footer p {
-    margin: 5px 0;
-    font-size: 1rem;
-    color: #fdfdfd;
-}
+
 
 .ubicacion i {
     margin-right: 10px;
@@ -294,6 +263,9 @@ footer p {
 .Whatsapp i{
     margin-right: 10px;
     color: #25D366;
+}
+footer a:hover {
+    text-decoration: underline;
 }
 /* Estilos para el formulario de autenticación */
 .auth-form {
