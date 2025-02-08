@@ -5,7 +5,6 @@ const productos = [
         imagen: "https://i.pinimg.com/736x/bd/ef/f8/bdeff8fdb093c44a3dd1e114a2aa19af.jpg",
         precio: "$400.00"
     },
-<<<<<<< HEAD
     {
         nombre: "Monederos modelo 1",
         imagen: "images/monedero.jpg",
@@ -52,9 +51,6 @@ const productos = [
         precio: "$1200.00"
     },
 
-    
-=======
->>>>>>> fb79809ef59864661a1e39db8391b906b805fad7
 ];
 // Variables para el contador
 let cantidad = 1;
