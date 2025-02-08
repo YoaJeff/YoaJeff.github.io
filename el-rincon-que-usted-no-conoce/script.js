@@ -6,21 +6,56 @@ const productos = [
         precio: "$400.00"
     },
     {
-        nombre: "Jeans Clásicos",
-        imagen: "https://imgs.search.brave.com/uQSWmkySV9pac7r680skfowl_36jYvhmkQnfOG-EzOs/rs:fit:500:0:0:0/g:ce/aHR0cHM6Ly9kY2Ru/Lm1pdGllbmRhbnVi/ZS5jb20vc3RvcmVz/Lzg2OC8wMjQvcHJv/ZHVjdHMvaW1nLTIw/MjEwNTE4LXdhMDAz/NjEtYzEwODU1MmE4/ZjZlYjZlM2MzMTcw/MTc4ODgxMDI5NDct/MjQwLTAuanBn",
-        precio: "$30.00"
+        nombre: "Monederos modelo 1",
+        imagen: "images/monedero.jpg",
+        precio: "$2500.00"
     },
     {
-        nombre: "Vestido Floral",
-        imagen: "https://imgs.search.brave.com/Q6r3YqJr_VQBe1dP23jHZH0MqJOK949-_hxHhbqS8m4/rs:fit:500:0:0:0/g:ce/aHR0cHM6Ly9pbWFn/ZS5obS5jb20vYXNz/ZXRzL2htLzc5LzZi/Lzc5NmI4YjBmYzlh/Mjk1YTI4OTA0NjJh/NGFjNDYxNGZiOWVj/YTkxZDkuanBnP2lt/d2lkdGg9MTUzNg",
-        precio: "$25.00"
+        nombre: "Monederos modelo 2",
+        imagen: "images/monederos 2.jpg",
+        precio: "$2500.00"
     },
     {
-        nombre: "Chaqueta de Cuero",
-        imagen: "https://imgs.search.brave.com/YrHr_EDItYVqKRxMXQrnSgttOyRKfLjsitd1sEpbcE0/rs:fit:500:0:0:0/g:ce/aHR0cHM6Ly9sYWNo/YXF1ZXRlcmlhLmNv/bS9jZG4vc2hvcC9m/aWxlcy9MQ0hMMDFC/TEFDSzMuanBnP3Y9/MTcxMzI5NDcxOSZ3/aWR0aD01MzM",
-        precio: "$50.00"
-    }
+        nombre: "Perfumes modelo 1",
+        imagen: "images/perfumes largos.jpg",
+        precio: "$800.00"
+    },
+    {
+        nombre: "Perfumes modelo 2",
+        imagen: "images/perfumes.jpg",
+        precio: "$1800.00"
+    },
+    {
+        nombre: "Lip gloss",
+        imagen: "images/lip-gloss.jpg",
+        precio: "$400.00"
+    },
+    {
+        nombre: "Eyeliner",
+        imagen: "images/eye liner.jpg",
+        precio: "$400.00"
+    },
+    {
+        nombre: "Toallitas sanitarias (intimas)",
+        imagen: "images/ts .jpg",
+        precio: "$400.00"
+    },
+    {
+        nombre: "Gafas para niños",
+        imagen: "images/gf.jpg",
+        precio: "$800.00"
+    },
+    {
+        nombre: "Gafas para niños-2",
+        imagen: "images/gO.jpg",
+        precio: "$1200.00"
+    },
+
+    
 ];
+// Variables para el contador
+let cantidad = 1;
+let productoSeleccionado = null;
 
 // Función para cargar los productos en la página
 function cargarProductos() {
@@ -36,16 +71,76 @@ function cargarProductos() {
             <h2>${producto.nombre}</h2>
             <p class="precio">${producto.precio}</p>
         `;
-        tarjetaProducto.addEventListener('click', () => agregarAlCarrito(producto));
+        tarjetaProducto.addEventListener('click', () => mostrarModal(producto));
         contenedorProductos.appendChild(tarjetaProducto);
     });
 }
+
+// Mostrar el modal con el producto
+function mostrarModal(producto) {
+    const modal = document.getElementById('modal-producto');
+    const modalImagen = document.getElementById('modal-imagen');
+    const modalNombre = document.getElementById('modal-nombre');
+    const modalPrecio = document.getElementById('modal-precio');
+
+    modalImagen.src = producto.imagen;
+    modalNombre.textContent = producto.nombre;
+    modalPrecio.textContent = producto.precio;
+
+    // Reiniciar el contador
+    cantidad = 1;
+    document.getElementById('cantidad').textContent = cantidad;
+
+    // Guardar el producto seleccionado
+    productoSeleccionado = producto;
+
+    modal.style.display = 'flex';
+}
+
+// Manejar el contador
+document.getElementById('btn-sumar').addEventListener('click', () => {
+    cantidad++;
+    document.getElementById('cantidad').textContent = cantidad;
+});
+
+document.getElementById('btn-restar').addEventListener('click', () => {
+    if (cantidad > 1) {
+        cantidad--;
+        document.getElementById('cantidad').textContent = cantidad;
+    }
+});
+
+// Añadir al carrito
+document.getElementById('btn-agregar-carrito').addEventListener('click', () => {
+    if (productoSeleccionado) {
+        productoSeleccionado.cantidad = cantidad; // Agregar la cantidad al producto
+        agregarAlCarrito(productoSeleccionado);
+        const modal = document.getElementById('modal-producto');
+        modal.style.display = 'none';
+    }
+});
+
+// Cerrar el modal
+document.querySelector('.cerrar-modal').addEventListener('click', () => {
+    const modal = document.getElementById('modal-producto');
+    modal.style.display = 'none';
+});
 
 // Carrito de compras
 let carrito = JSON.parse(localStorage.getItem('carrito')) || [];
 
 function agregarAlCarrito(producto) {
-    carrito.push(producto);
+    // Verificar si el producto ya está en el carrito
+    const productoEnCarrito = carrito.find(p => p.nombre === producto.nombre);
+
+    if (productoEnCarrito) {
+        // Si ya está, aumentar la cantidad
+        productoEnCarrito.cantidad += producto.cantidad;
+    } else {
+        // Si no está, agregarlo al carrito
+        carrito.push(producto);
+    }
+
     localStorage.setItem('carrito', JSON.stringify(carrito));
     actualizarCarrito();
 }
@@ -60,11 +155,11 @@ function actualizarCarrito() {
     carrito.forEach((producto, index) => {
         const li = document.createElement('li');
         li.innerHTML = `
-            ${producto.nombre} - ${producto.precio}
+            ${producto.nombre} - ${producto.precio} x ${producto.cantidad}
             <button onclick="eliminarDelCarrito(${index})">Eliminar</button>
         `;
         listaCarrito.appendChild(li);
-        total += parseFloat(producto.precio.replace('$', ''));
+        total += parseFloat(producto.precio.replace('$', '')) * producto.cantidad;
     });
 
     totalCarrito.textContent = `$${total.toFixed(2)}`;
