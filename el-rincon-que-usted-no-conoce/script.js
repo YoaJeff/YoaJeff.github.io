@@ -41,12 +41,12 @@ const productos = [
         precio: "$400.00"
     },
     {
-        nombre: "Gafas para niños",
+        nombre: "Gafas para niñas",
         imagen: "images/gf.jpg",
         precio: "$800.00"
     },
     {
-        nombre: "Gafas para niños-2",
+        nombre: "Gafas para niñas-2",
         imagen: "images/gO.jpg",
         precio: "$1200.00"
     },
