@@ -1,9 +1,9 @@
 // Array de productos estáticos
 const productos = [
     {
-        nombre: "Camiseta Negra",
-        imagen: "https://imgs.search.brave.com/kifQ34lUOuAagG3fPh-rv4vnDT2y1s4c_YMdcPL9bwY/rs:fit:500:0:0:0/g:ce/aHR0cHM6Ly9tZWNs/aWVyLmNvbS9jZG4v/c2hvcC9maWxlcy8x/OV83MGU4YzQ3Mi1k/MzYwLTRhMTItYmM3/Ni0wOTRmZTM3MTI0/NWMuanBnP3Y9MTY4/NzU0NDg0NSZ3aWR0/aD0xNDQ1",
-        precio: "$15.00"
+        nombre: "Pellizcos de flor para el pelo",
+        imagen: "https://i.pinimg.com/736x/bd/ef/f8/bdeff8fdb093c44a3dd1e114a2aa19af.jpg",
+        precio: "$400.00"
     },
     {
         nombre: "Jeans Clásicos",
