@@ -26,6 +26,15 @@
       font-weight: bold;
       margin: 0 15px;
     }
+    .wrapper {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+    main {
+      flex: 1;
+      padding: 10px;
+    }
     .container {
       max-width: 900px;
       margin: auto;
@@ -93,7 +102,7 @@
   </style>
 </head>
 <body>
-
+  <div class="wrapper">
   <header>
     <h1>Servicio Técnico Z_Dev y J_Dev</h1>
     <p>Reparamos, optimizamos y damos nueva vida a tu PC</p>
@@ -101,40 +110,41 @@
       <a href="faq.html">Preguntas Frecuentes</a>
     </nav>
   </header>
+  <main>
+    <div class="container">
+        <section class="services">
+          <h2>¿Qué ofrecemos?</h2>
+          <ul>
+            <li>✅ Reinstalación de Windows</li>
+            <li>✅ Actualización del sistema operativo</li>
+            <li>✅ Limpieza y optimización del PC</li>
+            <li>✅ Eliminación de virus y errores</li>
+            <li>✅ Configuración de programas esenciales</li>
+            <li>✅ Servicio a domicilio</li>
+            <li>✅ Asesoría para mejoras y actualizaciones de hardware (upgrades)</li>
+            <li>✅ Creación de páginas web personalizadas</li>
+          </ul>
+          <p>💻 Rápido - Económico - Confiable</p>
+        </section>
 
-  <div class="container">
-    <section class="services">
-      <h2>¿Qué ofrecemos?</h2>
-      <ul>
-        <li>✅ Reinstalación de Windows</li>
-        <li>✅ Actualización del sistema operativo</li>
-        <li>✅ Limpieza y optimización del PC</li>
-        <li>✅ Eliminación de virus y errores</li>
-        <li>✅ Configuración de programas esenciales</li>
-        <li>✅ Servicio a domicilio</li>
-        <li>✅ Asesoría para mejoras y actualizaciones de hardware (upgrades)</li>
-        <li>✅ Creación de páginas web personalizadas</li>
-      </ul>
-      <p>💻 Rápido - Económico - Confiable</p>
-    </section>
-
-    <section class="contact">
-      <h2>Contáctanos</h2>
-      <p>📍 Santa Clara - Villa Clara</p>
-      <p>📲 Escríbenos al WhatsApp:</p>
-      <div class="whatsapp">
-        <a href="https://wa.me/+5363853637" target="_blank">
-          <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp" class="whatsapp-icon" />
-          +53 63853637 (J_Dev)
-        </a>
-        <a href="https://wa.me/+5355743040" target="_blank">
-          <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp" class="whatsapp-icon" />
-          +53 55743040 (Z_Dev)
-        </a>
+        <section class="contact">
+          <h2>Contáctanos</h2>
+          <p>📍 Santa Clara - Villa Clara</p>
+          <p>📲 Escríbenos al WhatsApp:</p>
+          <div class="whatsapp">
+            <a href="https://wa.me/+5363853637" target="_blank">
+              <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp" class="whatsapp-icon" />
+              +53 63853637 (J_Dev)
+            </a>
+            <a href="https://wa.me/+5355743040" target="_blank">
+              <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp" class="whatsapp-icon" />
+              +53 55743040 (Z_Dev)
+            </a>
+          </div>
+        </section>
       </div>
-    </section>
+    </main>
   </div>
-
   <footer>
     © 2025 Z_Dev y J_Dev | Tu PC en buenas manos.
   </footer>
