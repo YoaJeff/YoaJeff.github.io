@@ -59,16 +59,26 @@
     .whatsapp {
       color: #00ff9d;
       font-weight: bold;
-      display: flex;
-      gap: 20px;
-      flex-wrap: wrap;
+      display: block;
+      margin-top: 10px;
     }
     .whatsapp a {
       color: #00ff9d;
       text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      margin-right: 20px;
+      transition: transform 0.3s ease;
     }
     .whatsapp a:hover {
       text-decoration: underline;
+      transform: scale(1.1);
+      cursor: pointer;
+    }
+    .whatsapp-icon {
+      width: 18px;
+      height: 18px;
     }
     footer {
       text-align: center;
@@ -115,10 +125,16 @@
     <section class="contact fade-in">
       <h2>Contáctanos</h2>
       <p>📲 Escríbenos al WhatsApp:</p>
-      <p class="whatsapp">
-        <a href="https://wa.me/+5363853637" target="_blank">+53 63853637 (J_Dev)</a>
-        <a href="https://wa.me/+5355743040" target="_blank">+53 55743040 (Z_Dev)</a>
-      </p>
+      <div class="whatsapp">
+        <a href="https://wa.me/+5363853637" target="_blank">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp" class="whatsapp-icon" />
+          +53 63853637 (J_Dev)
+        </a>
+        <a href="https://wa.me/+5355743040" target="_blank">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp" class="whatsapp-icon" />
+          +53 55743040 (Z_Dev)
+        </a>
+      </div>
     </section>
   </div>
 
