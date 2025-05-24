@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Servicio Técnico Z_Dev y J_Dev</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background: linear-gradient(-45deg, #0000ff, #800080, #4b0082, #1e90ff);
+      background-size: 400% 400%;
+      animation: gradientAnimation 15s ease infinite;
+      color: #f5f5f5;
+    }
+    header {
+      padding: 20px;
+      text-align: center;
+      background-color: rgba(0,0,0,0.4);
+    }
+    header h1 {
+      margin: 0;
+      font-size: 2.5rem;
+    }
+    .container {
+      max-width: 900px;
+      margin: auto;
+      padding: 20px;
+    }
+    .services {
+      background-color: rgba(0,0,0,0.2);
+      border-radius: 10px;
+      padding: 20px;
+      margin-bottom: 30px;
+    }
+    .services h2 {
+      color: #00ff9d;
+    }
+    ul {
+      padding-left: 20px;
+    }
+    ul li {
+      margin-bottom: 10px;
+      line-height: 1.6;
+      transition: transform 0.3s ease, background-color 0.3s ease;
+      padding: 10px;
+      border-radius: 5px;
+    }
+    ul li:hover {
+      transform: scale(1.05);
+      background-color: rgba(255, 255, 255, 0.1);
+      cursor: pointer;
+    }
+    .contact {
+      background-color: rgba(0,0,0,0.2);
+      border-radius: 10px;
+      padding: 20px;
+    }
+    .whatsapp {
+      color: #00ff9d;
+      font-weight: bold;
+      display: block;
+      margin-top: 10px;
+    }
+    .whatsapp a {
+      color: #00ff9d;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      margin-right: 20px;
+      transition: transform 0.3s ease;
+    }
+    .whatsapp a:hover {
+      text-decoration: underline;
+      transform: scale(1.1);
+      cursor: pointer;
+    }
+    .whatsapp-icon {
+      width: 18px;
+      height: 18px;
+    }
+    footer {
+      text-align: center;
+      padding: 15px;
+      background-color: rgba(0,0,0,0.3);
+      font-size: 0.9rem;
+    }
+
+    @keyframes gradientAnimation {
+      0% {
+        background-position: 0% 50%;
+      }
+      50% {
+        background-position: 100% 50%;
+      }
+      100% {
+        background-position: 0% 50%;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header class="fade-in">
+    <h1>Servicio Técnico Z_Dev y J_Dev</h1>
+    <p>Reparamos, optimizamos y damos nueva vida a tu PC</p>
+  </header>
+
+  <div class="container">
+    <section class="services fade-in">
+      <h2>¿Qué ofrecemos?</h2>
+      <ul>
+        <li>✅ Reinstalación de Windows</li>
+        <li>✅ Actualización del sistema operativo</li>
+        <li>✅ Limpieza y optimización del PC</li>
+        <li>✅ Eliminación de virus y errores</li>
+        <li>✅ Configuración de programas esenciales</li>
+        <li>✅ Servicio a domicilio</li>
+        <li>✅ Asesoría para mejoras y actualizaciones de hardware (upgrades)</li>
+      </ul>
+      <p>💻 Rápido - Económico - Confiable</p>
+    </section>
+
+    <section class="contact fade-in">
+      <h2>Contáctanos</h2>
+      <p>📲 Escríbenos al WhatsApp:</p>
+      <div class="whatsapp">
+        <a href="https://wa.me/+5363853637" target="_blank">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp" class="whatsapp-icon" />
+          +53 63853637 (J_Dev)
+        </a>
+        <a href="https://wa.me/+5355743040" target="_blank">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp" class="whatsapp-icon" />
+          +53 55743040 (Z_Dev)
+        </a>
+      </div>
+    </section>
+  </div>
+
+  <footer class="fade-in">
+    © 2025 Z_Dev y J_Dev | Tu PC en buenas manos.
+  </footer>
+
+</body>
+</html>
