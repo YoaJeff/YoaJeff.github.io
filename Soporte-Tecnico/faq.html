@@ -56,6 +56,22 @@
       cursor: pointer;
       font-weight: bold;
       font-size: 1.1rem;
+      color: #00ff9d;
+      /*animation: cambiar_color_sumary 10s infinite alternate;*/
+      transition: color 0.3s ease;
+    }
+    /*
+    @keyframes cambiar_color_sumary {
+      0% {color: rgb(25, 0, 255);}
+      25% {color: rgb(0, 26, 255);}
+      50% {color: rgb(98, 0, 255);}
+      75% {color: rgb(0, 26, 255);}
+      100% {columns: rgb(25, 0, 255);;}
+    }*/
+    .faq summary:hover{
+      animation-play-state: paused;
+      color: #0099ff;
+    
     }
     .faq p {
       margin-top: 8px;
