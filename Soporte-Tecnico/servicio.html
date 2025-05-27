@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Solicitud de Servicio - Z_Dev y J_Dev</title>
+  <link rel="icon" href="logo.ico">
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background: linear-gradient(135deg, #0000ff, #800080);
+      color: #f5f5f5;
+      margin: 0;
+      padding: 0;
+
+    }
+    header{
+      text-align: center;
+      background-color: rgba(0, 0, 0, 0.2);
+      padding: 20px;
+    }
+    .wrapper {
+      min-height: 96vh;
+      display: flex;
+      flex-direction: column;
+    }
+    .container {
+      flex: 1;
+      padding: 10px;
+      max-width: 900px;
+      margin: auto;
+      padding: 20px;
+    }
+    fieldset {
+      margin-bottom: 20px;
+      padding: 15px;
+      border-radius: 8px;
+      background-color: rgba(0, 0, 0, 0.2);
+      border: none;
+    }
+    legend {
+      font-weight: bold;
+      margin-bottom: 10px;
+    }
+    label {
+      display: block;
+      margin: 10px 0;
+    }
+    input[type="text"], input[type="tel"] {
+      padding: 8px;
+      width: 100%;
+      box-sizing: border-box;
+      margin-top: 5px;
+    }
+    button {
+      padding: 10px 20px;
+      background-color: #00ff9d;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      font-weight: bold;
+    }
+    button:hover {
+      background-color: #00cc7a;
+    }
+    fieldset:disabled, button:disabled {
+      opacity: 0.5;
+      pointer-events: none;
+    }
+    .error-border {
+      border: 2px solid red;
+      border-radius: 5px;
+    }
+    footer {
+      text-align: center;
+      padding: 15px;
+      background-color: rgba(0,0,0,0.3);
+      font-size: 0.9rem;
+    }
+  </style>
+</head>
+<body>
+    <div class="wrapper">
+        <header>
+    <h1>Solicitud de Servicio</h1>
+    <nav><a href="index.html" style="color:#00ff9d; text-decoration:none;">Volver al inicio</a></nav>
+        </header>
+
+        <div class="container">
+            <section class="quote-form">
+            <form id="serviceForm">
+                <fieldset id="servicesFields">
+                <legend>Selecciona los servicios</legend>
+                <label><input type="checkbox" name="services" value="Reinstalación de Windows" data-price="500"> Reinstalación de Windows - $500</label>
+                <label><input type="checkbox" name="services" value="Actualización de sistema operativo" data-price="300"> Actualización de sistema operativo - $300</label>
+                <label><input type="checkbox" id="domicilio" name="services" value="Domicilio" data-price="200" disabled> Servicio a domicilio - $200</label>
+                <div id="direccionField" style="display: none;">
+                    <label>Dirección: <input type="text" name="direccion" id="direccion"></label>
+                    <div id="referenciaField" style="display: none;">
+                    <label>Punto de Referencia (opcional): <input type="text" name="referencia"></label>
+                    </div>
+                </div>
+                </fieldset>
+
+                <p><strong>Total estimado: <span id="total">0</span> CUP</strong></p>
+
+                <fieldset id="personalFields" disabled>
+                <legend>Datos personales</legend>
+                <label>Nombre y Apellidos: <input type="text" name="nombre" id="nombre" required></label>
+                <label>Teléfono: <input type="tel" name="telefono" id="telefono" inputmode="numeric" pattern="[0-9]*" required></label>
+                </fieldset>
+
+                <fieldset id="tecnicoFields" disabled>
+                <legend>Selecciona un técnico</legend>
+                <label><input type="radio" name="tecnico" value="J_Dev" required> J_Dev</label>
+                <label><input type="radio" name="tecnico" value="Z_Dev" required> Z_Dev</label>
+                </fieldset>
+
+                <button id="submitBtn" type="submit" disabled>Completar servicio</button>
+            </form>
+            </section>
+        </div>
+    </div>
+
+  <footer>
+    © 2025 Z_Dev y J_Dev | Tu PC en buenas manos.
+  </footer>
+
+  <script>
+    const domicilioCheckbox = document.getElementById('domicilio');
+    const direccionField = document.getElementById('direccionField');
+    const direccionInput = document.getElementById('direccion');
+    const referenciaField = document.getElementById('referenciaField');
+    const totalDisplay = document.getElementById('total');
+    const personalFields = document.getElementById('personalFields');
+    const tecnicoFields = document.getElementById('tecnicoFields');
+    const submitBtn = document.getElementById('submitBtn');
+
+    const nombreInput = document.getElementById('nombre');
+    const telefonoInput = document.getElementById('telefono');
+
+    function calcularTotal() {
+      const checkboxes = document.querySelectorAll('input[name="services"]:checked');
+      let total = 0;
+      checkboxes.forEach(cb => {
+        total += parseInt(cb.getAttribute('data-price'));
+      });
+      totalDisplay.textContent = total;
+
+      const enabled = checkboxes.length > 0;
+      personalFields.disabled = !enabled;
+      tecnicoFields.disabled = !enabled;
+      domicilioCheckbox.disabled = !enabled;
+
+      checkFormCompleto();
+    }
+
+    domicilioCheckbox.addEventListener('change', function() {
+      direccionField.style.display = this.checked ? 'block' : 'none';
+      if (!this.checked) {
+        direccionInput.value = '';
+        referenciaField.style.display = 'none';
+      }
+      calcularTotal();
+    });
+
+    direccionInput.addEventListener('input', function() {
+      referenciaField.style.display = this.value.trim() ? 'block' : 'none';
+    });
+
+    document.querySelectorAll('input[name="services"]').forEach(cb => {
+      cb.addEventListener('change', calcularTotal);
+    });
+
+    function checkFormCompleto() {
+      const tecnicoSeleccionado = document.querySelector('input[name="tecnico"]:checked');
+      const nombreLleno = nombreInput.value.trim() !== '';
+      const telefonoLleno = telefonoInput.value.trim() !== '';
+      submitBtn.disabled = !(tecnicoSeleccionado && nombreLleno && telefonoLleno);
+    }
+
+    document.querySelectorAll('input[name="tecnico"]').forEach(rb => {
+      rb.addEventListener('change', checkFormCompleto);
+    });
+
+    nombreInput.addEventListener('input', checkFormCompleto);
+    telefonoInput.addEventListener('input', checkFormCompleto);
+
+    document.getElementById('serviceForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+
+      const servicios = Array.from(document.querySelectorAll('input[name="services"]:checked'))
+        .map(cb => cb.value)
+        .join(', ');
+
+      const direccion = direccionInput.value.trim();
+      const referencia = document.querySelector('input[name="referencia"]').value.trim();
+      const nombre = nombreInput.value.trim();
+      const telefono = telefonoInput.value.trim();
+      const tecnicoSeleccionado = document.querySelector('input[name="tecnico"]:checked').value;
+
+      let mensaje = `🛠 *Solicitud de Servicio*\n\n`;
+      mensaje += `*Cliente:* ${nombre}\n`;
+      mensaje += `*Teléfono:* ${telefono}\n`;
+      mensaje += `*Servicios:* ${servicios}\n`;
+      if (domicilioCheckbox.checked) {
+        mensaje += `*Dirección:* ${direccion}\n`;
+        if (referencia) mensaje += `*Referencia:* ${referencia}\n`;
+      }
+
+      const numerosTecnicos = {
+        "J_Dev": "+5363853637",
+        "Z_Dev": "+5355743040"
+      };
+
+      const numero = numerosTecnicos[tecnicoSeleccionado];
+      const url = `https://wa.me/${numero}?text=${encodeURIComponent(mensaje)}`;
+      window.open(url, '_blank');
+    });
+  </script>
+</body>
+</html>

@@ -7,9 +7,9 @@
   <link rel="icon" href="logo.ico">
   <style>
     body {
-      margin: 0;
+      margin: 0%;
       font-family: 'Segoe UI', sans-serif;
-      background: linear-gradient(135deg, #050570, #6901b3);
+      background: linear-gradient(135deg, #0000ff, #800080);
       color: #f5f5f5;
     }
     header{
@@ -28,7 +28,7 @@
       margin: 0 15px;
     }
     .wrapper {
-      min-height: 100vh;
+      min-height: 96vh;
       display: flex;
       flex-direction: column;
     }
@@ -94,6 +94,23 @@
       width: 18px;
       height: 18px;
     }
+    .pedido-btn {
+      display: block;
+      text-align: center;
+      margin: 40px auto 0;
+    }
+    .pedido-btn a {
+      background-color: #00ff9d;
+      color: #000;
+      padding: 12px 25px;
+      border-radius: 6px;
+      font-weight: bold;
+      text-decoration: none;
+      transition: background-color 0.3s ease;
+    }
+    .pedido-btn a:hover {
+      background-color: #00cc80;
+    }
     footer {
       text-align: center;
       padding: 15px;
@@ -104,47 +121,50 @@
 </head>
 <body>
   <div class="wrapper">
-  <header>
-    <h1>Servicio Técnico Z_Dev y J_Dev</h1>
-    <p>Reparamos, optimizamos y damos nueva vida a tu PC</p>
-    <nav>
-      <a href="faq.html">Preguntas Frecuentes</a>
-    </nav>
-  </header>
-  <main>
-    <div class="container">
-        <section class="services">
-          <h2>¿Qué ofrecemos?</h2>
-          <ul>
-            <li>✅ Reinstalación de Windows</li>
-            <li>✅ Actualización del sistema operativo</li>
-            <li>✅ Limpieza y optimización del PC</li>
-            <li>✅ Eliminación de virus y errores</li>
-            <li>✅ Configuración de programas esenciales</li>
-            <li>✅ Servicio a domicilio</li>
-            <li>✅ Asesoría para mejoras y actualizaciones de hardware (upgrades)</li>
-            <li>✅ Creación de páginas web personalizadas</li>
-          </ul>
-          <p>💻 Rápido - Económico - Confiable</p>
-        </section>
+    <header>
+      <h1>Servicio Técnico Z_Dev y J_Dev</h1>
+      <p>Reparamos, optimizamos y damos nueva vida a tu PC</p>
+      <nav>
+        <a href="faq.html">Preguntas Frecuentes</a>
+      </nav>
+    </header>
+        <main>
+            <div class="container">
+              <section class="services">
+                <h2>¿Qué ofrecemos?</h2>
+                <ul>
+                  <li>✅ Reinstalación de Windows</li>
+                  <li>✅ Actualización del sistema operativo</li>
+                  <li>✅ Limpieza y optimización del PC</li>
+                  <li>✅ Eliminación de virus y errores</li>
+                  <li>✅ Configuración de programas esenciales</li>
+                  <li>✅ Servicio a domicilio</li>
+                  <li>✅ Asesoría para mejoras y actualizaciones de hardware (upgrades)</li>
+                  <li>✅ Creación de páginas web personalizadas</li>
+                </ul>
+                <p>💻 Rápido - Económico - Confiable</p>
+              </section>
 
-        <section class="contact">
-          <h2>Contáctanos</h2>
-          <p>📍 Santa Clara - Villa Clara</p>
-          <p>📲 Escríbenos al WhatsApp:</p>
-          <div class="whatsapp">
-            <a href="https://wa.me/+5363853637" target="_blank">
-              <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp" class="whatsapp-icon" />
-              +53 63853637 (J_Dev)
-            </a>
-            <a href="https://wa.me/+5355743040" target="_blank">
-              <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp" class="whatsapp-icon" />
-              +53 55743040 (Z_Dev)
-            </a>
-          </div>
-        </section>
-      </div>
-    </main>
+              <section class="contact">
+                <h2>Contáctanos</h2>
+                <p>📲 Escríbenos al WhatsApp:</p>
+                <div class="whatsapp">
+                  <a href="https://wa.me/+5363853637" target="_blank">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp" class="whatsapp-icon" />
+                    +53 63853637 (J_Dev)
+                  </a>
+                  <a href="https://wa.me/+5355743040" target="_blank">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp" class="whatsapp-icon" />
+                    +53 55743040 (Z_Dev)
+                  </a>
+                </div>
+                <p>📍 Localización: Santa Clara - Villa Clara</p>
+              </section>
+              <div class="pedido-btn">
+                <a href="servicio.html">Realizar pedido</a>
+              </div>
+            </div>
+        </main>
   </div>
   <footer>
     © 2025 Z_Dev y J_Dev | Tu PC en buenas manos.
