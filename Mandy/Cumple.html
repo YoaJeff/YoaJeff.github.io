@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Feliz Cumpleaños 💙💜</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(135deg, #6e45e2 0%, #3883fa 100%);
+            height: 100vh;
+            overflow-x: hidden;
+            text-align: center;
+            color: white;
+        }
+        
+        .confetti {
+            position: fixed;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 1;
+        }
+        
+        .container {
+            position: relative;
+            z-index: 2;
+            padding: 20px;
+            animation: fadeIn 2s;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        
+        h1 {
+            color: #fff;
+            font-size: 3em;
+            text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+            margin-top: 40px;
+        }
+        
+        .gallery {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 15px;
+            margin: 40px auto;
+            max-width: 800px;
+        }
+        
+        .photo {
+            width: 160px;
+            height: 160px;
+            border-radius: 15px;
+            object-fit: contain;
+            transition: all 0.4s;
+            cursor: pointer;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+            border: 3px solid rgba(255, 255, 255, 0.3);
+        }
+        
+        .photo:hover {
+            transform: scale(1.1) rotate(5deg);
+            border-color: #fff;
+            box-shadow: 0 12px 25px rgba(0, 0, 0, 0.4);
+        }
+        .photo-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        
+/* Modal de imagen */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 100;
+    left: 0;
+    top: 0;
+    width: 100vw;
+    height: 100vh;
+    overflow: auto;
+    background-color: rgba(0,0,0,0.9);
+}
+.modal-inner {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    animation: zoomIn 0.4s ease;
+}
+
+.modal-caption {
+    margin-top: 15px;
+    color: #fff;
+    font-size: 1.2em;
+    font-weight: bold;
+    text-shadow: 0 1px 5px rgba(0,0,0,0.5);
+}
+
+.modal-content {
+    margin: auto;
+    display: block;
+    max-width: 90%;
+    max-height: 90%;
+    border: 4px solid white;
+    border-radius: 10px;
+}
+
+.modal:target {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.close {
+    position: absolute;
+    top: 20px;
+    right: 35px;
+    color: white;
+    font-size: 40px;
+    font-weight: bold;
+    text-decoration: none;
+    cursor: pointer;
+    z-index: 101;
+}
+
+.close:hover {
+    color: #ccc;
+}
+
+        .caption {
+            margin-bottom: 8px;
+            font-weight: bold;
+            font-size: 1em;
+            color: #fff;
+            text-shadow: 0 1px 4px rgba(0,0,0,0.6);
+        }
+        
+        .message {
+            background: rgba(255, 255, 255, 0.15);
+            backdrop-filter: blur(10px);
+            padding: 25px;
+            border-radius: 20px;
+            max-width: 600px;
+            margin: 40px auto;
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2);
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 1s;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+        
+        .show {
+            opacity: 1;
+            transform: translateY(0);
+        }
+           
+        .heart {
+            color: #ff4081;
+            font-size: 1.5em;
+            animation: pulse 1.5s infinite;
+        }
+        
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.3); }
+            100% { transform: scale(1); }
+        }
+        @keyframes zoomIn {
+    from {
+        opacity: 0;
+        transform: scale(0.7);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+    </style>
+</head>
+<body>
+    <audio id="bgMusic" src="music.mp3" loop></audio>
+    <!-- Confeti en tonos azul/morado -->
+    <canvas class="confetti" id="confetti"></canvas>
+    
+    <div class="container">
+        <h1>Feliz Cumpleaños <span class="heart">❤️</span></h1>
+        
+        <div class="gallery">
+            <div class="photo-container">
+                <div class="caption">Nuestro momento</div>
+                <img src="Nuestro momento/Collage.png" class="photo" alt="Nuestro momento">
+            </div>
+            <div class="photo-container">
+                <div class="caption">Juntos</div>
+                <img src="Juntos/Collage.png" class="photo" alt="Juntos">
+            </div>
+            <div class="photo-container">
+                <div class="caption">Aventuras</div>
+                <img src="Aventuras/Collage.png" class="photo" alt="Aventuras">
+            </div>
+        </div>
+        
+        
+        <div class="message" id="message">
+            <p>En este día especial, quiero recordarte lo increíble que eres...</p>
+            <p>Cada risa, cada mirada y cada momento a tu lado llena mi vida de <strong>colores</strong>.</p>
+            <p>¡Que este año te traiga tanta felicidad como la que tú me das! <span class="heart">❤️</span></p>
+        </div>
+        
+
+    </div>
+    <!-- Modal para imagen ampliada -->
+    <div id="imageModal" class="modal">
+    <span class="close" onclick="closeModal()">&times;</span>
+    <div class="modal-inner">
+        <img class="modal-content" id="modalImg">
+        <div class="modal-caption" id="modalCaption"></div>
+    </div>
+    </div>
+
+    <script>
+        // Confeti en azul/morado
+        const confettiCanvas = document.getElementById('confetti');
+        const ctx = confettiCanvas.getContext('2d');
+        confettiCanvas.width = window.innerWidth;
+        confettiCanvas.height = window.innerHeight;
+        
+        const confettiPieces = [];
+        const colors = ['#7c4dff', '#651fff', '#3d5afe', '#2979ff', '#00b0ff', '#e040fb', '#d500f9'];
+        
+        class Confetti {
+            constructor() {
+                this.x = Math.random() * confettiCanvas.width;
+                this.y = Math.random() * confettiCanvas.height - confettiCanvas.height;
+                this.size = Math.random() * 12 + 6;
+                this.color = colors[Math.floor(Math.random() * colors.length)];
+                this.speed = Math.random() * 3 + 2;
+                this.angle = Math.random() * 360;
+                this.shape = Math.random() > 0.5 ? 'circle' : 'rect';
+            }
+            
+            update() {
+                this.y += this.speed;
+                this.angle += 0.1;
+                if (this.y > confettiCanvas.height) {
+                    this.y = 0;
+                    this.x = Math.random() * confettiCanvas.width;
+                }
+            }
+            
+            draw() {
+                ctx.save();
+                ctx.translate(this.x, this.y);
+                ctx.rotate(this.angle * Math.PI / 180);
+                ctx.fillStyle = this.color;
+                
+                if (this.shape === 'circle') {
+                    ctx.beginPath();
+                    ctx.arc(0, 0, this.size/2, 0, Math.PI * 2);
+                    ctx.fill();
+                } else {
+                    ctx.fillRect(-this.size/2, -this.size/2, this.size, this.size);
+                }
+                
+                ctx.restore();
+            }
+        }
+        
+        for (let i = 0; i < 150; i++) {
+            confettiPieces.push(new Confetti());
+        }
+        
+        function animateConfetti() {
+            ctx.clearRect(0, 0, confettiCanvas.width, confettiCanvas.height);
+            confettiPieces.forEach(piece => {
+                piece.update();
+                piece.draw();
+            });
+            requestAnimationFrame(animateConfetti);
+        }
+        
+        animateConfetti();
+        
+        // Mostrar mensaje con efecto
+        setTimeout(() => {
+            document.getElementById('message').classList.add('show');
+        }, 1500);
+        
+    </script>
+    <script>
+    const images = document.querySelectorAll('.photo');
+    const modal = document.getElementById('imageModal');
+    const modalImg = document.getElementById('modalImg');
+    const modalCaption = document.getElementById('modalCaption');
+
+    images.forEach(img => {
+        img.addEventListener('click', () => {
+            modal.style.display = 'flex';
+            modalImg.src = img.src;
+            modalImg.alt = img.alt;
+            modalCaption.textContent = img.alt;
+        });
+    });
+
+    function closeModal() {
+        modal.style.display = "none";
+    }
+
+    modal.addEventListener('click', (e) => {
+        if (e.target === modal) closeModal();
+    });
+
+    const audio = document.getElementById('bgMusic');
+    let hasPlayed = false;
+
+    function tryPlayMusic() {
+        if (!hasPlayed) {
+            audio.play().then(() => {
+                hasPlayed = true;
+            }).catch((e) => {
+                console.log('Autoplay bloqueado:', e);
+            });
+        }
+    }
+
+    document.addEventListener('click', tryPlayMusic);
+</script>
+
+
+</div>
+</body>
+</html>
